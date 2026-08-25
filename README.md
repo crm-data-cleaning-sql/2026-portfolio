@@ -4,7 +4,7 @@
 
 Welcome to my data portfolio. This repository contains optimized SQL scripts and data cleaning workflows designed to solve real-world business infrastructure and data integrity challenges.
 
-## 🕵️‍♂️ Case Study 1: The SQL Murder Mystery
+## 🕵️‍♂️ Case Study 1: [The SQL Murder Mystery](https://mystery.knightlab.com/#experienced)
 * **Objective:** Query an unfamiliar database schema to trace witness accounts, cross-reference driver's licenses, and isolate a suspect based on fragmented event logs.
 * **Skills Demonstrated:** Relational database joins (`INNER`/`LEFT JOIN`), string filtering (`LIKE`), data aggregation, and multi-table filtering.
 * **Solution Script:** [Link to your script file, e.g., `./murder_mystery_solution.sql`]
