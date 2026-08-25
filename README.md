@@ -38,8 +38,8 @@ AND person_id IN("78881", "90700", "99716")
 * **Solution Script:**
 
   ### Key Query Example (Identifying the Orphan Record):
-  ```sql
-  SELECT 
+ ```sql
+SELECT 
     t.transaction_id,
     t.customer_id AS orphan_customer_id,
     t.amount,
