@@ -50,6 +50,25 @@ LEFT JOIN customers c
 WHERE c.customer_id IS NULL;
 ```
 
+  ### Key Query Example (Safety Reallocations):
+ ```sql
+-- Step A: Reassign transactions from duplicate ID 103 to primary ID 101
+UPDATE transactions
+SET customer_id = 101
+WHERE customer_id = 103;
+
+-- Step B: Reassign transactions from duplicate ID 105 to primary ID 102
+UPDATE transactions
+SET customer_id = 102
+WHERE customer_id = 105;
+
+-- Step C: Safely remove redundant profiles
+DELETE FROM customers
+WHERE customer_id IN (103, 105);
+```
+
+
+
 ## 🛠️ Data Cleaning Competencies
 * **Excel / Power Query:** Restructuring messy CSV exports, resolving data-type mismatches, and building dynamic Pivot Tables for executive summaries.
 * **Data Integrity:** Writing SQL validation constraints to locate orphan records and drop duplicates.
