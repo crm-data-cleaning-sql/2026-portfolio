@@ -24,7 +24,7 @@ WHERE dl.plate_number LIKE '%H42W%'
   AND m.membership_status = 'gold';
 ```
 
-## 🕵️‍♂️ Case Study 2: The Ghost Accounts & Broken Ledger
+## 🕵️‍♂️ Case Study 2: [The Ghost Accounts & Broken Ledger](https://github.com/crm-data-cleaning-sql/2026-portfolio/tree/main/sql)
 * **Objective:** Audit a corrupted relational CRM schema to track down "ghost" orphan transactions missing primary foreign key links and resolve split identity profiles across legacy customer tables. 
 * **Skills Demonstrated:** Partitioning data sets and data manipulation and safely update deletion. 
 * **Solution Script:**
