@@ -9,6 +9,7 @@ Welcome to my data portfolio. This repository contains optimized SQL scripts and
 * **Skills Demonstrated:** Relational database joins (`INNER`/`LEFT JOIN`), string filtering (`LIKE`), data aggregation, and multi-table filtering.
 * **Solution Script:** [Link to your script file, e.g., `./murder_mystery_solution.sql`]
 
+
 ### Key Query Example (Finding the Suspect):
 ```sql
 SELECT 
@@ -22,6 +23,11 @@ JOIN get_fit_now_check_in f ON m.id = f.membership_id
 WHERE dl.plate_number LIKE '%H42W%' 
   AND m.membership_status = 'gold';
 ```
+
+## 🕵️‍♂️ Case Study 2: 
+* **Objective:**
+* **Skills Demonstrated:**
+* **Solution Script:**
 
 ## 🛠️ Data Cleaning Competencies
 * **Excel / Power Query:** Restructuring messy CSV exports, resolving data-type mismatches, and building dynamic Pivot Tables for executive summaries.
