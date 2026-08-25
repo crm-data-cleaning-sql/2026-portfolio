@@ -23,7 +23,7 @@ JOIN get_fit_now_check_in f ON m.id = f.membership_id
 WHERE dl.plate_number LIKE '%H42W%' 
   AND m.membership_status = 'gold';
 ```
-### Key Query Example (Finding the "Real Villain"):
+### Key Query Example (Finding the Real Villain):
 ```sql
 SELECT name, annual_income as income, 
 gender, eye_color as eyes, hair_color as hair
