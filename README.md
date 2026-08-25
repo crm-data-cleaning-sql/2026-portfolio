@@ -24,7 +24,7 @@ WHERE dl.plate_number LIKE '%H42W%'
   AND m.membership_status = 'gold';
 ```
 ### Key Query Example (Finding the "Real Villain"):
-```
+```sql
 SELECT DISTINCT person_id FROM facebook_event_checkin
 WHERE event_name LIKE "SQL%"
 AND date BETWEEN "20171201" AND "20171231"
