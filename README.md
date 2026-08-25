@@ -25,7 +25,7 @@ WHERE dl.plate_number LIKE '%H42W%'
 ```
 ### Key Query Example (Finding the "Real Villain"):
 ```
-SELECT * FROM facebook_event_checkin
+SELECT DISTINCT person_id FROM facebook_event_checkin
 WHERE event_name LIKE "SQL%"
 AND date BETWEEN "20171201" AND "20171231"
 AND person_id IN("78881", "90700", "99716")
