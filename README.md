@@ -1,4 +1,4 @@
-# 2026-portfolio
+<p align="center"># 2026-portfolio</p>
 
 # 📊 SQL Data Portfolio: Case Studies & Business Solutions
 
