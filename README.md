@@ -25,10 +25,18 @@ WHERE dl.plate_number LIKE '%H42W%'
 ```
 ### Key Query Example (Finding the "Real Villain"):
 ```sql
-SELECT DISTINCT person_id FROM facebook_event_checkin
-WHERE event_name LIKE "SQL%"
-AND date BETWEEN "20171201" AND "20171231"
-AND person_id IN("78881", "90700", "99716")
+SELECT name, annual_income as income, 
+gender, eye_color as eyes, hair_color as hair
+FROM income i
+JOIN person p
+  ON i.ssn = p.ssn 
+JOIN drivers_license dl
+  ON p.license_id = dl.id  
+WHERE eye_color = "green"
+AND hair = "red"
+AND gender = "female"
+ORDER BY income DESC
+LIMIT 1
 ```
 
 
