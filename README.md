@@ -26,7 +26,7 @@ WHERE dl.plate_number LIKE '%H42W%'
 
 ## 🕵️‍♂️ Case Study 2: The Ghost Accounts & Broken Ledger
 * **Objective:** Audit a corrupted relational CRM schema to track down "ghost" orphan transactions missing primary foreign key links and resolve split identity profiles across legacy customer tables. 
-* **Skills Demonstrated:**
+* **Skills Demonstrated:** Partitioning data sets and data manipulation and safely update deletion. 
 * **Solution Script:**
 
 ## 🛠️ Data Cleaning Competencies
