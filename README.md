@@ -34,8 +34,21 @@ AND person_id IN("78881", "90700", "99716")
 
 ## 🕵️‍♂️ Case Study 2: [The Ghost Accounts & Broken Ledger](https://github.com/crm-data-cleaning-sql/2026-portfolio/tree/main/sql)
 * **Objective:** Audit a corrupted relational CRM schema to track down "ghost" orphan transactions missing primary foreign key links and resolve split identity profiles across legacy customer tables. 
-* **Skills Demonstrated:** Partitioning data sets and data manipulation and safely update deletion. 
+* **Skills Demonstrated:** Relational Schema and data set manipulation with safety update deletion. 
 * **Solution Script:**
+
+  ### Key Query Example (Identifying the Orphan Record):
+  ```sql
+  SELECT 
+    t.transaction_id,
+    t.customer_id AS orphan_customer_id,
+    t.amount,
+    t.purchase_date
+FROM transactions t
+LEFT JOIN customers c 
+    ON t.customer_id = c.customer_id
+WHERE c.customer_id IS NULL;
+```
 
 ## 🛠️ Data Cleaning Competencies
 * **Excel / Power Query:** Restructuring messy CSV exports, resolving data-type mismatches, and building dynamic Pivot Tables for executive summaries.
