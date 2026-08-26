@@ -45,6 +45,7 @@ LIMIT 1
 * **Skills Demonstrated:** Relational Schema and data set manipulation with safety update deletion. 
 * **Solution Script:**
 
+
   ### Key Query Example (Identifying the Orphan Record):
  ```sql
 SELECT 
@@ -57,7 +58,16 @@ LEFT JOIN customers c
     ON t.customer_id = c.customer_id
 WHERE c.customer_id IS NULL;
 ```
-
+  ### Key Query Example (Identifying the Duplicates):
+ ```sql
+SELECT 
+    first_name, 
+    last_name, 
+    COUNT(*) AS record_count
+FROM customers
+GROUP BY first_name, last_name
+HAVING COUNT(*) > 1;
+```
   ### Key Query Example (Safety Reallocations):
  ```sql
 -- Step A: Reassign transactions from duplicate ID 103 to primary ID 101
