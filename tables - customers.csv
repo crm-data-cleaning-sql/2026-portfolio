@@ -1,0 +1,6 @@
+customer_id (PK),first_name,last_name,email,created_at
+101,Sarah,Connor,sarah.c@sky.net,2026-01-10
+102,John,Smith,jsmith@gmail.com,2026-01-12
+103,Sarah,Connor,sarah.connor@sky.net,2026-01-15
+104,Ellen,Ripley,ripley@nostromo.org,2026-01-20
+105,John,Smith,j.smith@gmail.com,2026-02-01
