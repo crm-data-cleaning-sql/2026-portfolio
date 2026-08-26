@@ -1,0 +1,10 @@
+# Ignore Excel and Access binary lock files
+~$*.xlsx
+*.laccdb
+
+# Ignore local system clutter
+.DS_Store
+Thumbs.db
+
+# Optional: Ignore generated output spreadsheets
+data/output/*.xlsx
