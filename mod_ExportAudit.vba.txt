@@ -1,0 +1,55 @@
+Attribute VB_Name = "mod_ExportAudit"
+Option Explicit
+
+' ==============================================================================
+' Module    : mod_ExportAudit
+' Purpose   : Automates orphan transaction SQL checks and exports to Excel.
+' ==============================================================================
+Public Sub ExportOrphanAuditToExcel()
+    On Error GoTo ErrorHandler
+
+    Dim db As DAO.Database
+    Dim qdf As DAO.QueryDef
+    Dim strQueryName As String
+    Dim strSQL As String
+    Dim strExportPath As String
+    
+    Set db = CurrentDb()
+    strQueryName = "qry_AuditOrphanTransactions"
+    
+    ' SQL definition for orphan records
+    strSQL = "SELECT t.transaction_id, t.customer_id AS orphan_customer_id, " & _
+             "t.amount, t.purchase_date " & _
+             "FROM transactions AS t LEFT JOIN customers AS c " & _
+             "ON t.customer_id = c.customer_id " & _
+             "WHERE c.customer_id IS NULL;"
+
+    ' Create or update the query definition inside Access
+    On Error Resume Next
+    Set qdf = db.QueryDefs(strQueryName)
+    On Error GoTo ErrorHandler
+
+    If qdf Is Nothing Then
+        Set qdf = db.CreateQueryDef(strQueryName, strSQL)
+    Else
+        qdf.SQL = strSQL
+    End If
+
+    ' Path to export
+    strExportPath = Environ("USERPROFILE") & "\Desktop\Orphan_Transactions_Audit.xlsx"
+
+    ' Export directly to Excel
+    DoCmd.OutputTo acOutputQuery, strQueryName, acFormatXLSX, strExportPath, True
+    
+    Set qdf = Nothing
+    Set db = Nothing
+    
+    MsgBox "Orphan Audit complete! Excel report exported to Desktop.", _
+           vbInformation, "Success"
+    Exit Sub
+
+ErrorHandler:
+    MsgBox "Error: " & Err.Description, vbCritical, "Execution Error"
+    Set qdf = Nothing
+    Set db = Nothing
+End Sub
